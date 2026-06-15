@@ -1,0 +1,143 @@
+@font-face {
+  font-family: 'interBold';
+  src: url(../../fonts/inter/static/Inter_18pt-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'rokkittExtraBold';
+  src: url(../../fonts/rokkitt/static/Rokkitt-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: 'rokkittBold';
+  src: url(../../fonts/rokkitt/static/Rokkitt-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'rokkittMedium';
+  src: url(../../fonts/rokkitt/static/Rokkitt-Medium.ttf);
+}
+
+.title {
+  h2 {
+    font-family: 'interBold';
+    margin-top: 21px;
+    margin-bottom: 21px;
+    text-align: center;
+    font-size: 32px;
+    color: white;
+    line-height: 32px;
+  }
+}
+
+.contForCard {
+  width: 95%;
+  min-height: 300px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: black;
+  padding: 0 20px 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+
+  .card {
+    box-sizing: border-box;
+    width: calc((100% - 60px) / 4);
+    background-color: rgb(217, 217, 217);
+    padding: 4px 10px 10px;
+    border-radius: 4px;
+    transition: all 150ms ease-in;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 7px;
+    min-height: 390px;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+
+    img {
+      min-width: 100%;
+      height: 220px;
+    }
+
+    .nameProd {
+      margin-top: 4px;
+      border-top: 2px solid black;
+      padding-top: 4px;
+
+      h4 {
+        margin: 0;
+        font-family: 'rokkittBold';
+        font-size: 20px;
+        letter-spacing: -.8px;
+      }
+    }
+
+    .description {
+      margin-top: 12px;
+
+      p {
+        margin: 0;
+        font-family: 'rokkittMedium';
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      &.active{
+        p{
+          -webkit-line-clamp: unset;
+          line-clamp: unset;
+          overflow: visible;
+        }
+      }
+    }
+
+    .showMore{
+      border: none;
+      background-color: rgb(176, 176, 176);
+      opacity: 0.7;
+      cursor: pointer;
+      border-radius: 3px;
+      padding: 3px 0;
+      font-family: 'rokkittBold';
+    }
+
+    .footerCard {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+
+      .price {
+        margin-top: 10px;
+
+        span {
+          font-family: 'rokkittExtraBold';
+          font-size: 20px;
+        }
+      }
+
+      .addCart {
+        margin-top: 5px;
+
+        button {
+          border: none;
+          color: aliceblue;
+          background-color: rgb(32, 32, 32);
+          font-family: 'rokkittBold';
+          font-size: 15px;
+          border-radius: 10px;
+          padding: 6px 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

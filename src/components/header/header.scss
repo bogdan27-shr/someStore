@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'rokkittExstraBold';
+  src: url(../../fonts/rokkitt/static/Rokkitt-ExtraBold.ttf);
+}
+@font-face {
+  font-family: 'interBold';
+  src: url(../../fonts/inter/static/Inter_18pt-Bold.ttf);
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header{
+  background-color: white;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+
+  .logo{
+    width: calc(100% / 3.5);
+    height: 100%;
+    border: 1px solid black;
+    @include flex-center;
+
+    h1{
+      margin: 0;
+      font-size: 40px;
+      font-family: 'rokkittExstraBold';
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+
+  .search{
+    width:  calc(100% / 1.5);
+    height: 100%;
+    border: 1px solid black;
+    @include flex-center;
+
+    input{
+      width: 90%;
+      height: 30px;
+      border-radius: 10px;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+      border: none;
+      padding: 5px;
+      transition: all 100ms;
+      outline: none;
+      
+      &:focus{
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);;
+      }
+    }
+  }
+
+  .cartStore{
+    width: calc(100% / 7);
+    height: 100%;
+    border:  1px solid black;
+    @include flex-center;
+
+    .cartItem{
+      font-family: 'interBold';
+      font-size: 22px;
+      transition: all 200ms;
+
+      &:hover{
+        transform: scale(1.03);
+        cursor: pointer;
+      }
+    }
+  }
+}
