@@ -49,6 +49,7 @@
     background-color: rgb(217, 217, 217);
     padding: 4px 10px 10px;
     border-radius: 4px;
+    box-shadow: 0 2px 4px rgb(184, 184, 184);
     transition: all 150ms ease-in;
     display: flex;
     flex-direction: column;
@@ -57,7 +58,7 @@
     min-height: 390px;
 
     &:hover {
-      transform: scale(1.01);
+      box-shadow: 0 5px 10px rgb(184, 184, 184);
     }
 
     img {
@@ -75,6 +76,11 @@
         font-family: 'rokkittBold';
         font-size: 20px;
         letter-spacing: -.8px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
     }
 
@@ -89,13 +95,6 @@
         line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
-      }
-      &.active{
-        p{
-          -webkit-line-clamp: unset;
-          line-clamp: unset;
-          overflow: visible;
-        }
       }
     }
 
@@ -136,6 +135,24 @@
           border-radius: 10px;
           padding: 6px 10px;
           cursor: pointer;
+        }
+      }
+    }
+
+    &.active {
+      .description {
+        p {
+        -webkit-line-clamp: unset;
+        line-clamp: unset;
+        overflow: visible;
+        }
+      }
+  
+      .nameProd {
+        h4 {
+        -webkit-line-clamp: unset;
+        line-clamp: unset;
+        overflow: visible;
         }
       }
     }

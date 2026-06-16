@@ -1,19 +1,16 @@
 import { useState } from "react";
 
-export function OneCard({ info }) {
-  console.log(info);
-
+export function OneCard({info, addToCart}) {
   const [openDesc, setOpenDesc] = useState(false);
-
 
   return (
     <>
-      <div className="card">
+      <div className={`card ${openDesc ? 'active' : ''}`}>
         <img src={info.image} alt={info.title} />
         <div className="nameProd">
           <h4>{info.title}</h4>
         </div>
-        <div className={`description ${openDesc ? 'active' : ''}`}>
+        <div className={`description`}>
           <p>{info.description}</p>
         </div>
         <button
@@ -27,7 +24,9 @@ export function OneCard({ info }) {
             <span>${info.price}</span>
           </div>
           <div className="addCart">
-            <button>Add to Cart</button>
+            <button
+              onClick={() => addToCart(info)}
+            >Add to Cart</button>
           </div>
         </div>
       </div>
