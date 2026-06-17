@@ -1,18 +1,20 @@
-import { useState } from "react";
+import {useState} from "react";
 
-export function OneCard({info, addToCart, infoC, page}) {
+export function OneCard({info, addToCart, infoC, page, deleteC}) {
   const [openDesc, setOpenDesc] = useState(false);
-  //console.log(cart)
 
   if(page === `home`){
     return (
       <>
         <div className={`card ${openDesc ? 'active' : ''}`}>
           <section>
+
             <img src={info.image} alt={info.title}/>
+
             <div className="nameProd">
               <h4>{info.title}</h4>
             </div>
+
             <div className={`description`}>
               <p>{info.description}</p>
             </div>
@@ -22,6 +24,7 @@ export function OneCard({info, addToCart, infoC, page}) {
             >
               {openDesc ? 'Show less' : 'Show more...'}
             </button>
+
             <div className="footerCard">
               <div className="price">
                 <span>${info.price}</span>
@@ -34,23 +37,30 @@ export function OneCard({info, addToCart, infoC, page}) {
                 </button>
               </div>
             </div>
+            
           </section>
         </div>
       </>
     );
   }
 
-
   if(page === `cart`){
     return (
       <>
         <div className={`card ${openDesc ? 'active' : ''}`}>
           <section>
-            {console.log(infoC)}
-            <img src={infoC.image} alt={infoC.title}/>
+
+            <div className="imgWrap">
+              <div className="pieces">
+                <span>{infoC.count}</span>
+              </div>
+              <img src={infoC.image} alt={infoC.title}/>
+            </div>
+            
             <div className="nameProd">
               <h4>{infoC.title}</h4>
             </div>
+
             <div className={`description`}>
               <p>{infoC.description}</p>
             </div>
@@ -60,18 +70,23 @@ export function OneCard({info, addToCart, infoC, page}) {
             >
               {openDesc ? 'Show less' : 'Show more...'}
             </button>
+
             <div className="footerCard">
               <div className="price">
-                <span>${infoC.price}</span>
+                <span>${parseFloat(infoC.count * infoC.price).toFixed(2)}</span>
               </div>
               <div className="deleteFromCart">
-                <button
-                  onClick={() => {}}
+                <button 
+                  id={infoC.id}
+                  onClick={({target}) => {
+                    deleteC(parseFloat(target.id));
+                  }}
                 >
                   Delete
                 </button>
               </div>
             </div>
+
           </section>
         </div>
       </>

@@ -12,18 +12,28 @@ export function App () {
   let addToCart = (prod) => {
     setCart((prev) => [...prev, prod]);
   }
+  let deleteFromCart = (id) => {
+    let newCart = [...cart];
+    let index = newCart.findIndex((el) => el.id === id);
 
-  useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }, [cart]);
+    if(index !== -1){
+      newCart.splice(index, 1);
+    }
+    setCart(newCart);
+  }
 
-  useEffect(() => {
-    const save = localStorage.getItem('cart');
-
-    if(save) setCart(JSON.parse(save));
-  }, []);
-
-
+  if(cart <= 0){
+    useEffect(() => {
+      const save = localStorage.getItem('cart');
+  
+      if(save) setCart(JSON.parse(save));
+    }, []);
+  }else{
+    useEffect(() => {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }, [cart]);
+  }
+  
   return(
     <>
     <Header
@@ -49,6 +59,7 @@ export function App () {
           cart={cart}
           addToCart={addToCart}
           page={page}
+          deleteC={deleteFromCart}
         />
       )
     }
