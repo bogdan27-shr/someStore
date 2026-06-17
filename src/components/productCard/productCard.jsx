@@ -1,7 +1,7 @@
 import './productCard.scss';
 import {OneCard} from './oneCard/oneCard';
 
-export function ProductCard ({products, search, addToCart}) {
+export function ProductCard ({products, search, addToCart, page}) {
   return(
     <main>
       <div className="title">
@@ -15,6 +15,7 @@ export function ProductCard ({products, search, addToCart}) {
                 key={e.id} 
                 info={e}
                 addToCart={addToCart}
+                page={page}
               />
             );
           })

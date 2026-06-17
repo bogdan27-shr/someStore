@@ -1,11 +1,15 @@
 import './header.scss';
 
-export function Header ({search, setSearch, cart}) {
+export function Header ({search, setSearch, cart, setPage}) {
   return(
     <>
     <header className="header">
       <div className="logo">
-        <h1>BEST STORE</h1>
+        <h1
+          onClick={() => {setPage('home')}}
+        >
+          BEST STORE
+        </h1>
       </div>
       <div className="search">
         <input
@@ -17,7 +21,10 @@ export function Header ({search, setSearch, cart}) {
         />
       </div>
       <div className="cartStore">
-        <span className='cartItem'>
+        <span
+          className='cartItem'
+          onClick={() => {setPage('cart')}}
+        >
           Cart (<span id='countC'>{cart.length}</span>)
         </span>
       </div>

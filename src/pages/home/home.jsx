@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { req } from '../../api/products.js';
 import { ProductCard } from '../../components/productCard/productCard.jsx';
 
-export function Home({search, addToCart}) {
+export function Home({search, addToCart, page}) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -13,9 +13,6 @@ export function Home({search, addToCart}) {
       console.error(er);
     });
   }, []);
-
-  console.log(products)
-  console.log(search)
 
   const searchProd = products.filter((one) =>{
     return one.title.toLowerCase().includes(search.toLowerCase());
@@ -32,6 +29,7 @@ export function Home({search, addToCart}) {
       search={search} 
       products={search.length > 0 ? searchProd : products.slice(0, 4)}
       addToCart={addToCart}
+      page={page}
       />
   );
 }

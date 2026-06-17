@@ -51,11 +51,14 @@
     border-radius: 4px;
     box-shadow: 0 2px 4px rgb(184, 184, 184);
     transition: all 150ms ease-in;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 7px;
-    min-height: 390px;
+
+    section{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 7px;
+      min-height: 390px;
+    }
 
     &:hover {
       box-shadow: 0 5px 10px rgb(184, 184, 184);

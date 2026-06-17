@@ -1,15 +1,28 @@
 import {Header} from './components/header/header.jsx';
 import {Home} from './pages/home/home.jsx';
+import {Cart} from './pages/cart/cart.jsx';
 import {Footer} from './components/footer/footer.jsx';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function App () {
   const [search, setSearch] = useState('');
   const [cart, setCart] = useState([]);
+  const [page, setPage] = useState('home');
 
   let addToCart = (prod) => {
     setCart((prev) => [...prev, prod]);
   }
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+
+  useEffect(() => {
+    const save = localStorage.getItem('cart');
+
+    if(save) setCart(JSON.parse(save));
+  }, []);
+
 
   return(
     <>
@@ -17,11 +30,29 @@ export function App () {
       search={search}
       setSearch={setSearch}
       cart={cart}
+      setPage={setPage}
     />
-    <Home
-      search={search}
-      addToCart={addToCart}
-    />
+
+    {
+      page === `home` && (
+        <Home
+          search={search}
+          addToCart={addToCart}
+          page={page}
+        />
+      )
+    }
+
+    {
+      page === `cart` && (
+        <Cart
+          cart={cart}
+          addToCart={addToCart}
+          page={page}
+        />
+      )
+    }
+
     <Footer/>
     </>
   );
