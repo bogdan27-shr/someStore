@@ -25,7 +25,8 @@ export function Header ({search, setSearch, cart, setPage}) {
           className='cartItem'
           onClick={() => {setPage('cart')}}
         >
-          Cart (<span id='countC'>{cart.length}</span>)
+          <img src="src\img\cart.svg" alt="Cart"/>
+          {cart.length > 0 ? <span id='countC'>({cart.length})</span> : ''}
         </span>
       </div>
     </header>

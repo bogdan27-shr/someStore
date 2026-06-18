@@ -1,4 +1,5 @@
 import {OneCard} from "../../components/productCard/oneCard/oneCard.jsx";
+import {TotalPrice} from "./totalPrice/totalPrice.jsx";
 
 export function Cart ({cart, addToCart, page, deleteC}) {
   const allCart = {};
@@ -37,6 +38,10 @@ export function Cart ({cart, addToCart, page, deleteC}) {
             )
           }
         </div>
+        
+        <TotalPrice
+          cart={cart}
+        />
       </main>
     </>
   );

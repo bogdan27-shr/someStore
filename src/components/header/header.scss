@@ -68,10 +68,15 @@
       font-size: 22px;
       transition: all 200ms;
       padding: 5px;
+      @include flex-center;
 
       &:hover{
         transform: scale(1.03);
         cursor: pointer;
+      }
+
+      img{
+        width: 37px;
       }
     }
   }

@@ -25,11 +25,13 @@ export function Home({search, addToCart, page}) {
   }
 
   return(
+    <>
     <ProductCard 
       search={search} 
       products={search.length > 0 ? searchProd : products.slice(0, 4)}
       addToCart={addToCart}
       page={page}
     />
+    </>
   );
 }

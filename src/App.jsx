@@ -22,17 +22,14 @@ export function App () {
     setCart(newCart);
   }
 
-  if(cart <= 0){
-    useEffect(() => {
-      const save = localStorage.getItem('cart');
+  useEffect(() => {
+    const save = localStorage.getItem('cart');
   
-      if(save) setCart(JSON.parse(save));
-    }, []);
-  }else{
-    useEffect(() => {
-      localStorage.setItem('cart', JSON.stringify(cart));
-    }, [cart]);
-  }
+    if(save) setCart(JSON.parse(save));
+  }, []);
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
   
   return(
     <>

@@ -1,0 +1,224 @@
+@font-face {
+  font-family: 'interMedium';
+  src: url(../../fonts/inter/static/Inter_18pt-Medium.ttf);
+}
+@font-face {
+  font-family: 'interExstraBold';
+  src: url(../../fonts/inter/static/Inter_18pt-ExtraBold.ttf);
+}
+
+@keyframes formBg {
+  from{ 
+    opacity: 0;
+  }to{
+    opacity: 1;
+  }
+}
+@keyframes formUp {
+  from{
+    transform: translateY(40px);
+    opacity: 0;
+  }to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes formBgClose {
+  from{
+    opacity: 1;
+  }to{
+    opacity: 0;
+  }
+}
+@keyframes formClose {
+  from{
+    transform: translateY(0);
+    opacity: 1;
+  }to{
+    transform: translateY(40px);
+    opacity: 0;
+  }
+}
+
+@keyframes showRes {
+  from{
+    opacity: 0;
+  }1%{
+    opacity: 1;
+  }98%{
+    opacity: 1;
+  }99%{
+    opacity: 0;
+  }
+}
+@keyframes modalRes {
+  from{
+    top: 0%;
+    opacity: 0;
+  }10%{
+    top: 50%;
+    opacity: 1;
+  }96%{
+    top: 50%;
+    opacity: 1;
+  }98%{
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@mixin flex-cener{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin resModal {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0px;
+  opacity: 0;
+  animation: showRes 5000ms linear;
+}
+@mixin contP {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  @include flex-cener;
+}
+
+@mixin p {
+  display: inline-block;
+  padding: 13px 13px;
+  font-size: 30px;
+  font-family: 'interMedium';
+  color: aliceblue;
+  border-radius: 4px;
+  line-height: 30px;
+  position: absolute;
+  margin: 0;
+  top: 0%;
+  opacity: 0;
+  animation: modalRes 5000ms ease-in-out;
+}
+
+.modal{
+  width: 100%;
+  min-height: 100%;
+  background-color: rgb(255, 255, 255, 0.4);
+  position: absolute;
+  top: 0px;
+  @include flex-cener;
+  animation: formBg 150ms linear;
+  
+  &.closeF{
+    animation: formBgClose 200ms ease-in-out;
+
+    .details{
+      animation: formClose 200ms ease-in-out;
+    }
+  }
+
+  .details{
+    width: 65%;
+    min-height: 500px;
+    background-color: rgb(255, 255, 255);
+    z-index: 3;
+    border-radius: 8px;
+    padding: 8px;
+    animation: formUp 280ms ease-in-out;
+
+    .close{
+      width: 30px;
+      height: 30px;
+      margin-left: auto;
+      @include flex-cener;
+      cursor: pointer;
+      overflow: hidden;
+
+      img{
+        width: 55px;
+      }
+    }
+
+    form{
+      @include flex-cener;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+
+      input[id^="user"]{
+        margin-right: auto;
+        margin-left: 50px;
+        width: 70%;
+        padding: 5px 3px;
+        font-family: 'interMedium';
+        font-size: 20px;
+        border-radius: 5px;
+        border: 2px solid rgb(88, 88, 88);
+      }
+      
+      .userCreditC{
+        margin-right: auto;
+        margin-left: 50px;
+        margin-top: 20px;
+        width: 71%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        input{
+          width: 100%;
+          padding: 5px 3px;
+          font-family: 'interMedium';
+          font-size: 20px;
+          border-radius: 5px;
+          border: 2px solid rgb(88, 88, 88);
+        }
+        #dateCard,#cvvCode{
+          width: calc((100% - 34px) /2);
+        }
+      }
+
+      input[type="submit"]{
+        border: none;
+        background-color: rgb(0, 192, 45);
+        padding: 10px;
+        width: 40%;
+        border-radius: 5px;
+        font-family: 'interMedium';
+        font-size: 20px;
+        line-height: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.modalResult{
+  @include resModal;
+  background-color: rgba(95, 95, 95, 0.5);
+
+  .allOk{
+    @include contP;
+
+    p{
+      background-color: rgb(58, 173, 58);
+      @include p;
+
+      span{
+        font-family: 'interExstraBold';
+      }
+    }
+  }
+
+  .someP{
+    @include contP;
+
+    p{
+      background-color: rgb(254, 47, 47);
+      @include p;
+    }
+  }
+}

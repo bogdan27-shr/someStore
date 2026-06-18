@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'rokkittBold';
+  src: url(../../../fonts/rokkitt/static/Rokkitt-Bold.ttf);
+}
+
+#pay{
+  border: none;
+  background-color: rgb(221, 251, 255);
+  font-family: 'rokkittBold';
+  font-size: 25px;
+  line-height: 25px;
+  width: 40%;
+  padding: 15px 0;
+  border-radius: 18px;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  cursor: pointer;
+
+  &:hover{
+    box-shadow: 1px 1px 2px 3px rgb(221, 251, 255);
+  }
+}
