@@ -8,6 +8,7 @@ export function App () {
   const [search, setSearch] = useState('');
   const [cart, setCart] = useState([]);
   const [page, setPage] = useState('home');
+  const [viewAllP, setViewAllP] = useState('close');
 
   let addToCart = (prod) => {
     setCart((prev) => [...prev, prod]);
@@ -38,6 +39,7 @@ export function App () {
       setSearch={setSearch}
       cart={cart}
       setPage={setPage}
+      setViewAllP={setViewAllP}
     />
 
     {
@@ -46,6 +48,8 @@ export function App () {
           search={search}
           addToCart={addToCart}
           page={page}
+          viewAllP={viewAllP}
+          setViewAllP={setViewAllP}
         />
       )
     }

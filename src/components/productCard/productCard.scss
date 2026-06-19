@@ -65,8 +65,9 @@
     }
 
     img {
-      min-width: 100%;
+      width: 100%;
       height: 220px;
+      cursor: pointer;
     }
 
     .nameProd {
@@ -79,11 +80,16 @@
         font-family: 'rokkittBold';
         font-size: 20px;
         letter-spacing: -.8px;
-        display: -webkit-box;
+        display: -webkit-inline-box;
         -webkit-line-clamp: 1;
         line-clamp: 1;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        cursor: pointer;
+
+        &:hover{
+          text-decoration: underline;
+        }
       }
     }
 
@@ -207,4 +213,19 @@
       }
     }
   }
+}
+
+#viAll{
+  width: 40%;
+  line-height: 25px;
+  font-size: 22px;
+  border-radius: 10px;
+  padding: 10px 0;
+  margin-top: 15px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  font-family: 'rokkittExtraBold';
+  letter-spacing: 2px;
 }

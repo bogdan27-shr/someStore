@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './payDetails.scss';
+import closeIcon from '../../img/close.svg';
 
 export function PayDetails ({total, setOpenPay, closePay, setClosePay}){
   const [valRes, setValRes] = useState(false);
@@ -11,8 +12,15 @@ export function PayDetails ({total, setOpenPay, closePay, setClosePay}){
     setTimeout(() => {
       setOpenPay(false);
       setClosePay(false);
-    }, 200);
+    }, 195);
   }
+
+  useEffect(() => {
+    document.body.classList.toggle(`activeMB`);
+    return () => {
+      document.body.classList.toggle(`activeMB`);
+    }
+  }, []);
 
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -41,7 +49,7 @@ export function PayDetails ({total, setOpenPay, closePay, setClosePay}){
               closeForm();
             }}
           >
-            <img src="src\img\close.svg" alt="Close"/>
+            <img src={closeIcon} alt="Close"/>
           </div>
 
           <form

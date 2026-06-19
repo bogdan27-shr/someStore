@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { req } from '../../api/products.js';
 import { ProductCard } from '../../components/productCard/productCard.jsx';
 
-export function Home({search, addToCart, page}) {
+export function Home({search, addToCart, page, viewAllP, setViewAllP}) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -26,12 +26,30 @@ export function Home({search, addToCart, page}) {
 
   return(
     <>
-    <ProductCard 
-      search={search} 
-      products={search.length > 0 ? searchProd : products.slice(0, 4)}
-      addToCart={addToCart}
-      page={page}
-    />
+      {
+        viewAllP === `close` && (
+          <ProductCard 
+            search={search} 
+            products={search.length > 0 ? searchProd : products.slice(0, 4)}
+            addToCart={addToCart}
+            page={page}
+            viewAllP={viewAllP}
+            setViewAllP={setViewAllP}
+          />
+        )
+      }
+      {
+        viewAllP === `open` && (
+          <ProductCard 
+            search={search} 
+            products={products}
+            addToCart={addToCart}
+            page={page}
+            viewAllP={viewAllP}
+            setViewAllP={setViewAllP}
+          />
+        )
+      }
     </>
   );
 }
