@@ -1,7 +1,7 @@
 import './productCard.scss';
 import {OneCard} from './oneCard/oneCard';
 
-export function ProductCard ({products, search, addToCart, page, viewAllP, setViewAllP}){
+export function ProductCard ({products, search, addToCart, page, setPage, viewAllP, setViewAllP, setCurrProd}){
   function showT (search, viAll){
     if(search.length > 0){
       return `Search results`;
@@ -11,7 +11,7 @@ export function ProductCard ({products, search, addToCart, page, viewAllP, setVi
       return `The best products`;
     }
   }
-  
+
   return(
     <main>
       <div className="title">
@@ -28,6 +28,8 @@ export function ProductCard ({products, search, addToCart, page, viewAllP, setVi
                 info={e}
                 addToCart={addToCart}
                 page={page}
+                setPage={setPage}
+                setCurrProd={setCurrProd}
               />
             );
           })

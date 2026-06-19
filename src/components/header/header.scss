@@ -3,6 +3,10 @@
   src: url(../../fonts/rokkitt/static/Rokkitt-ExtraBold.ttf);
 }
 @font-face {
+  font-family: 'rokkittBold';
+  src: url(../../fonts/rokkitt/static/Rokkitt-Bold.ttf);
+}
+@font-face {
   font-family: 'interBold';
   src: url(../../fonts/inter/static/Inter_18pt-Bold.ttf);
 }
@@ -23,7 +27,6 @@
   .logo{
     width: calc(100% / 3.5);
     height: 100%;
-    border: 1px solid black;
     @include flex-center;
 
     h1{
@@ -38,18 +41,19 @@
   .search{
     width:  calc(100% / 1.5);
     height: 100%;
-    border: 1px solid black;
     @include flex-center;
 
     input{
+      font-family: 'rokkittBold';
       width: 90%;
       height: 30px;
       border-radius: 10px;
       box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
       border: none;
-      padding: 5px;
+      padding: 20px;
       transition: all 100ms;
       outline: none;
+      font-size: 18px;
       
       &:focus{
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);;
@@ -60,7 +64,6 @@
   .cartStore{
     width: calc(100% / 7);
     height: 100%;
-    border:  1px solid black;
     @include flex-center;
 
     .cartItem{

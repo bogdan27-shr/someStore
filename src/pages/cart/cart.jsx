@@ -1,7 +1,18 @@
 import {OneCard} from "../../components/productCard/oneCard/oneCard.jsx";
 import {TotalPrice} from "./totalPrice/totalPrice.jsx";
 
-export function Cart ({cart, addToCart, page, deleteC}) {
+export function Cart ({
+  cart, 
+  addToCart, 
+  page, 
+  setPage, 
+  deleteC, 
+  setCurrProd, 
+  openPay, 
+  setOpenPay, 
+  closePay, 
+  setClosePay
+}){
   const allCart = {};
 
   cart.forEach((e) => {
@@ -31,7 +42,9 @@ export function Cart ({cart, addToCart, page, deleteC}) {
                     infoC={e}
                     addToCart={addToCart}
                     page={page}
+                    setPage={setPage}
                     deleteC={deleteC}
+                    setCurrProd={setCurrProd}
                   />
                 );
               })
@@ -41,6 +54,10 @@ export function Cart ({cart, addToCart, page, deleteC}) {
         
         <TotalPrice
           cart={cart}
+          openPay={openPay}
+          setOpenPay={setOpenPay}
+          closePay={closePay}
+          setClosePay={setClosePay}
         />
       </main>
     </>

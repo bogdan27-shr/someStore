@@ -1,6 +1,7 @@
 import {Header} from './components/header/header.jsx';
 import {Home} from './pages/home/home.jsx';
 import {Cart} from './pages/cart/cart.jsx';
+import {Products} from './pages/products/products.jsx';
 import {Footer} from './components/footer/footer.jsx';
 import { useEffect, useState } from 'react';
 
@@ -9,6 +10,9 @@ export function App () {
   const [cart, setCart] = useState([]);
   const [page, setPage] = useState('home');
   const [viewAllP, setViewAllP] = useState('close');
+  const [currProd, setCurrProd] = useState({});
+  const [openPay, setOpenPay] = useState(false);
+  const [closePay, setClosePay] = useState(false);
 
   let addToCart = (prod) => {
     setCart((prev) => [...prev, prod]);
@@ -48,8 +52,10 @@ export function App () {
           search={search}
           addToCart={addToCart}
           page={page}
+          setPage={setPage}
           viewAllP={viewAllP}
           setViewAllP={setViewAllP}
+          setCurrProd={setCurrProd}
         />
       )
     }
@@ -60,7 +66,26 @@ export function App () {
           cart={cart}
           addToCart={addToCart}
           page={page}
+          setPage={setPage}
           deleteC={deleteFromCart}
+          setCurrProd={setCurrProd}
+          openPay={openPay}
+          setOpenPay={setOpenPay}
+          closePay={closePay}
+          setClosePay={setClosePay}
+        />
+      )
+    }
+
+    {
+      page === `one product` && (
+        <Products
+          currProd={currProd}
+          openPay={openPay}
+          setOpenPay={setOpenPay}
+          closePay={closePay}
+          setClosePay={setClosePay}
+          addToCart={addToCart}
         />
       )
     }

@@ -1,7 +1,13 @@
 import './header.scss';
 import cartIcon from '../../img/cart.svg';
 
-export function Header ({search, setSearch, cart, setPage, setViewAllP}) {
+export function Header ({
+  search, 
+  setSearch, 
+  cart, 
+  setPage, 
+  setViewAllP
+}){
   return(
     <>
       <header className="header">

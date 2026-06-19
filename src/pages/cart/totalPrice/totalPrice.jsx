@@ -2,9 +2,9 @@ import './totalPrice.scss';
 import {PayDetails} from '../../../components/payDetails/payDetails';
 import { useState } from 'react';
 
-export function TotalPrice ({cart}) {
-  const [openPay, setOpenPay] = useState(false);
-  const [closePay, setClosePay] = useState(false);
+export function TotalPrice ({cart, setOpenPay, openPay, closePay, setClosePay}) {
+  //const [openPay, setOpenPay] = useState(false);
+  //const [closePay, setClosePay] = useState(false);
 
   const total = cart.reduce((a, p) => a + p.price, 0);
 

@@ -3,7 +3,15 @@ import { useState, useEffect } from 'react';
 import { req } from '../../api/products.js';
 import { ProductCard } from '../../components/productCard/productCard.jsx';
 
-export function Home({search, addToCart, page, viewAllP, setViewAllP}) {
+export function Home({
+  search, 
+  addToCart, 
+  page, 
+  setPage, 
+  viewAllP, 
+  setViewAllP, 
+  setCurrProd
+}){
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -33,8 +41,10 @@ export function Home({search, addToCart, page, viewAllP, setViewAllP}) {
             products={search.length > 0 ? searchProd : products.slice(0, 4)}
             addToCart={addToCart}
             page={page}
+            setPage={setPage}
             viewAllP={viewAllP}
             setViewAllP={setViewAllP}
+            setCurrProd={setCurrProd}
           />
         )
       }
@@ -45,8 +55,10 @@ export function Home({search, addToCart, page, viewAllP, setViewAllP}) {
             products={products}
             addToCart={addToCart}
             page={page}
+            setPage={setPage}
             viewAllP={viewAllP}
             setViewAllP={setViewAllP}
+            setCurrProd={setCurrProd}
           />
         )
       }

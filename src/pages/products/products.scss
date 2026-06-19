@@ -1,0 +1,152 @@
+@font-face {
+  font-family: 'rokkittMedium';
+  src: url(../../fonts/rokkitt/static/Rokkitt-Medium.ttf);
+}
+@font-face {
+  font-family: 'rokkittExtraBold';
+  src: url(../../fonts/rokkitt/static/Rokkitt-ExtraBold.ttf);
+}
+@font-face {
+  font-family: 'interMedium';
+  src: url(../../fonts/inter/static/Inter_18pt-Medium.ttf);
+}
+@font-face {
+  font-family: 'interBold';
+  src: url(../../fonts/inter/static/Inter_18pt-Bold.ttf);
+}
+
+
+@mixin flex-col{
+  display: flex;
+  flex-direction: column;
+}
+@mixin disc {
+  margin-top: 15px;
+
+  p{
+    font-family: 'interMedium';
+    margin: 0;
+    font-size: 22px;
+
+    span{
+      font-size: 25px;
+      font-family: 'rokkittExstraBold';
+    }
+  }
+}
+@mixin btnP {
+  width: 70%;
+  font-family: 'interBold';
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  transition: all 100ms linear; 
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.contOneProd{
+  width: 100%;
+  height: auto;
+  margin: 30px 0;
+  padding: 0 30px;
+
+  .oneProd{
+    width: 100%;
+    height: auto;
+    background-color: rgb(253, 253, 253);
+    border-radius: 5px;
+    padding: 40px;
+    display: flex;
+
+    .leftInfo{
+      width: calc(100% / 2);
+      @include flex-col;
+      align-items: center;
+
+      .imfOne{
+        width: 75%;
+
+        img{
+          width: 100%;
+        }
+      }
+
+      h3{
+        font-family: 'rokkittExtraBold';
+        font-size: 40px;
+        margin: 20px 0 10px;
+        letter-spacing: 1px;
+      }
+
+      button{
+        background-color: rgb(0, 192, 45);
+        @include btnP;
+        
+        &:hover{
+          background-color: rgb(13, 214, 60);
+        }
+      }
+    }
+    
+    .rightInfo{
+      width: calc(100% / 2);
+      @include flex-col;
+
+      .descProd{
+        width: 100%;
+        background-color: rgba(205, 205, 205, 0.5);
+        padding: 10px;
+        border-radius: 15px;
+
+        h4{
+          font-family: 'interBold';
+          margin: 0 0 5px;
+          font-size: 26px;
+          text-align: center;
+        }
+
+        p{
+          margin: 0;
+          font-family: 'rokkittMedium';
+          font-size: 22px;
+        }
+      }
+
+      .category{
+        @include disc;
+      }
+
+      .price{
+        @include disc;
+      }
+
+      .rate{
+        @include disc;
+      }
+
+      .count{
+        @include disc;
+      }
+
+      button{
+        @include btnP;
+        margin-top: 15px;
+        width: 100%;
+        background-color: rgb(23, 23, 23);
+        color: whitesmoke;
+
+        &:hover{
+          background-color: rgb(48, 48, 48);
+        }
+      }
+    }
+  }
+}

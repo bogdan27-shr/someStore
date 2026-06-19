@@ -1,6 +1,14 @@
 import {useState} from "react";
 
-export function OneCard({info, addToCart, infoC, page, deleteC}) {
+export function OneCard({
+  info,
+  addToCart, 
+  infoC, 
+  page, 
+  setPage, 
+  deleteC, 
+  setCurrProd
+}){
   const [openDesc, setOpenDesc] = useState(false);
 
   if(page === `home`){
@@ -12,7 +20,15 @@ export function OneCard({info, addToCart, infoC, page, deleteC}) {
             <img src={info.image} alt={info.title}/>
 
             <div className="nameProd">
-              <h4>{info.title}</h4>
+              <h4
+                onClick={({target}) => {
+                  console.log(target);
+                  setPage(`one product`);
+                  setCurrProd(info);
+                }}
+              >
+                {info.title}
+              </h4>
             </div>
 
             <div className={`description`}>
@@ -58,7 +74,13 @@ export function OneCard({info, addToCart, infoC, page, deleteC}) {
             </div>
             
             <div className="nameProd">
-              <h4>{infoC.title}</h4>
+              <h4
+                onClick={({target}) => {
+                  console.log(target);
+                  setPage(`one product`);
+                  setCurrProd(infoC);
+                }}
+              >{infoC.title}</h4>
             </div>
 
             <div className={`description`}>
