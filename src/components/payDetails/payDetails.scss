@@ -101,6 +101,7 @@
   top: 0%;
   opacity: 0;
   animation: modalRes 5000ms ease-in-out;
+  user-select: none;
 }
 
 .activeMB{
@@ -141,6 +142,7 @@
       @include flex-cener;
       cursor: pointer;
       overflow: hidden;
+      user-select: none;
 
       img{
         width: 55px;
@@ -163,6 +165,7 @@
         font-size: 20px;
         border-radius: 5px;
         border: 2px solid rgb(88, 88, 88);
+        user-select: none;
       }
       
       .userCreditC{
@@ -184,6 +187,7 @@
         }
         #dateCard,#cvvCode{
           width: calc((100% - 34px) /2);
+          user-select: none;
         }
       }
 
@@ -197,6 +201,7 @@
         font-size: 20px;
         line-height: 20px;
         cursor: pointer;
+        user-select: none;
       }
     }
   }

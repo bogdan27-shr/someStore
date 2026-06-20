@@ -23,6 +23,7 @@
   height: 80px;
   display: flex;
   flex-direction: row;
+  user-select: none;
 
   .logo{
     width: calc(100% / 3.5);

@@ -1,9 +1,18 @@
 import './productCard.scss';
 import {OneCard} from './oneCard/oneCard';
 
-export function ProductCard ({products, search, addToCart, page, setPage, viewAllP, setViewAllP, setCurrProd}){
+export function ProductCard ({
+  products, 
+  search, 
+  addToCart, 
+  page, 
+  setPage, 
+  viewAllP, 
+  setViewAllP, 
+  setCurrProd
+}){
   function showT (search, viAll){
-    if(search.length > 0){
+    if(page === `search`){
       return `Search results`;
     }else if(viAll === `open`){
       return `All our products`;
@@ -12,11 +21,25 @@ export function ProductCard ({products, search, addToCart, page, setPage, viewAl
     }
   }
 
+  if(products.length <= 0){
+    return(
+      <>
+        <main>
+          <div className="contForCard">
+            <h2>
+              There are no products found according to your request
+            </h2>
+          </div>
+        </main>
+      </>
+    );
+  }
+  
   return(
     <main>
       <div className="title">
         <h2>
-          {showT(search, viewAllP)}
+          {showT(page, viewAllP)}
         </h2>
       </div>
       <div className="contForCard">
@@ -36,7 +59,8 @@ export function ProductCard ({products, search, addToCart, page, setPage, viewAl
         }
       </div>
       {
-        viewAllP === `close` && (
+        viewAllP === `close` && 
+        page === `home` && (
           <button 
             id='viAll'
             onClick={() => {

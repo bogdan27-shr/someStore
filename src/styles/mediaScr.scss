@@ -1,0 +1,761 @@
+@media (max-width : 1170px) {
+  html{
+    body{
+
+      footer{
+        .botFoot{
+          .firmInfo{
+            ul{
+              li{
+                .imgF{
+                  background-size: 40px;
+                }
+
+                a{
+                  font-size: 15px;
+
+                  span{
+                    font-size: 19px;
+                  }
+                }
+
+                .imgW{
+                  background-size: 25px;
+                }
+
+                .wtm{
+                  font-size: 15px;
+
+                  span{
+                    font-size: 20px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 1121px) {
+  html{
+    body{
+
+      footer{
+        .botFoot{
+          h3{
+            text-align: center;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 1085px) {
+  html{
+    body{
+      
+      main{
+        .contForCard{
+          .card{
+            width: calc((100% - 40px) / 3);
+          }
+        }
+      }
+
+      footer{
+        margin-top: 50px;
+      }
+
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  html{
+    body{
+
+      main{
+        #viAll{
+          width: 55%;
+          font-size: 26px;
+        }
+
+        #pay{
+          width: 60%;
+          font-size: 28px;
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 975px){
+  html{
+    body{
+
+      footer{
+        .botFoot{
+          .locFirm{
+            .someInfo{
+              ul{
+                li{
+                  border-bottom: 1px solid black;
+
+                  a{
+                    font-size: 15px;
+
+                    span{
+                      font-size: 20px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 940px) {
+  html{
+    body{
+
+      main{
+        .contOneProd{
+          .oneProd{
+            gap: 25px;
+
+            .leftInfo{
+              h3{
+                line-height: 35px;
+                word-spacing: -2px;
+                letter-spacing: 0px;
+              }
+
+              button{
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        .modal{
+          .details{
+            form{
+              input[id^=user]{
+                margin: 0;
+                width: 90%;
+              }
+
+              .userCreditC{
+                margin-right: 0;
+                margin-left: 0;
+                width: 90%;
+
+                #dateCard,#cvvCode{
+                  width: calc((100% - 15px) / 2);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      footer{
+        .botFoot{
+          .firmInfo{
+            ul{
+              li{
+                .imgF{
+                  width: 40px;
+                  
+                }
+
+                .imgW{
+                  background-size: 25px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 815px) {
+  html{
+    body{
+
+      main{
+        .contForCard{
+          padding: 0 0 15px;
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  html{
+    body{
+
+      main{
+        .contForCard{
+          .card{
+            section{
+              .description{
+                margin-top: 0;
+              }
+            }
+          }
+        }
+
+        .contOneProd{
+          .oneProd{
+            padding: 25px;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  html{
+    body{
+
+      main{
+        .title{
+          h2{
+            font-size: 27px;
+            margin-top: 12px;
+            margin-bottom: 12px;
+          }
+        }
+
+        .contForCard{
+          padding: 0 20px 15px;
+
+          .card{
+            width: calc((100% - 20px) / 2);
+          }
+        }
+
+        #viAll{
+          width: 75%;
+          font-size: 27px;
+        }
+
+        .modal{
+          .details{
+            width: 75%;
+
+            form{
+              input[type=submit]{
+                width: 65%;
+                font-size: 22px;
+              }
+            }
+          }
+        }
+      }
+
+      footer{
+        .botFoot{
+          gap: 10px;
+
+          .logoF{
+            width: calc((100% - 20px) / 3);
+          }
+
+          .locFirm{
+            width: calc((100% - 20px) / 3);
+          }
+
+          .firmInfo{
+            width: calc((100% - 20px) / 3);
+
+            ul{
+              li{
+                .imgF{
+                  width: 50px;
+                }
+
+                .imgW{
+                  width: 40px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  html{
+    body{
+
+      footer{
+        .botFoot{
+          .firmInfo{
+            ul{
+              li{
+                .imgF{
+                  height: stretch;
+                }
+
+                .imgW{
+                  height: stretch;
+                }
+
+                
+              }
+              li:last-child{
+                .imgW{
+                  margin-left: -4px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 635px) {
+  html{
+    body{
+
+      main{
+        .contForCard{
+          padding: 0 0px 15px;
+        }
+
+        .contOneProd{
+          padding: 0 15px;
+
+          .oneProd{
+            gap: 20px;
+
+            .leftInfo{
+              .imfOne{
+                width: 90%;
+              }
+
+              h3{
+                font-size: 30px;
+              }
+            }
+
+            .rightInfo{
+              .descProd{
+                h4{
+                  font-size: 20px;
+                }
+
+                p{
+                  font-size: 19px;
+                  letter-spacing: -1px;
+                }
+              }
+
+              .category,.price,.rate,.count{
+                margin-top: 10px;
+
+                p{
+                  font-size: 18px;
+
+                  span{
+                    font-size: 21px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      footer{
+        margin-top: 40px;
+
+        .botFoot{
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+
+          .logoF,.locFirm,.firmInfo{
+            width: calc(100% / 1);
+          }
+
+          .locFirm{
+            .someInfo{
+              ul{
+                li{
+                  a{
+                    font-size: 18px;
+
+                    span{
+                      font-size: 21px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .firmInfo{
+            ul{
+              li{
+                .imgF{
+                  height: 40px;
+                  width: 35px;
+                  background-position: left;
+                }
+
+                .imgW{
+                  height: 40px;
+                }
+
+                a{
+                  font-size: 18px;
+
+                  span{
+                    font-size: 22px;
+                  }
+                }
+
+                .wtm{
+                  font-size: 18px;
+
+                  span{
+                    font-size: 22px;
+                  }
+                }
+              }
+  
+              li:last-child{
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 590px) {
+  html{
+    body{
+
+      .header{
+        .cartStore{
+          width: 20%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  html{
+    body{
+
+      main{
+        .contOneProd{
+          .oneProd{
+            flex-direction: column;
+            gap: 30px;
+
+            .leftInfo{
+              width: 100%;
+
+              .imfOne{
+                width: 60%;
+
+                img{
+                  height: 270px;
+                }
+              }
+            }
+
+            .rightInfo{
+              width: 100%;
+            }
+          }
+        }
+
+        .modal{
+          .details{
+            width: 80%;
+
+            form{
+              input[id^=user]{
+                font-size: 18px;
+              }
+
+              .userCreditC{
+                input,#dateCard,#cvvCode{
+                  font-size: 18px;
+                }
+              }
+
+              input[type=submit]{
+                width: 80%;
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 470px) {
+  html{
+    body{
+
+      .header{
+        .logo{
+          h1{
+            font-size: 33px;
+          }
+        }
+      }
+
+      main{
+        .title{
+          h2{
+            font-size: 24px;
+            margin-top: 9px;
+            margin-bottom: 9px;
+          }
+        }
+
+        h2{
+          line-height: 29px;
+          font-size: 29px;
+          margin-bottom: 15px;
+          margin-top: 15px;
+        }
+
+        .contForCard{
+          padding: 0 60px 15px;
+
+          .card{
+            width: calc(100%);
+          }
+        }
+
+        #pay{
+          width: 90%;
+        }
+
+        .modal{
+          .details{
+            form{
+              input[id^=user]{
+                font-size: 16px;
+              }
+
+              .userCreditC{
+                input,#dateCard,#cvvCode{
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  html{
+    body{
+
+      .header{
+        flex-wrap: wrap;
+        height: auto;
+        padding-bottom: 5px;
+        align-items: center;
+
+        .logo{
+          width: 100%;
+          h1{
+            font-size: 45px;
+          }
+        }
+
+        .search{
+          width: 80%;
+
+          input{
+            padding: 16px;
+          }
+        }
+
+        .cartStore{
+          width: 20%;
+
+          .cartItem{
+            img{
+              width: 30px;
+            }
+
+            #countC{
+              font-size: 19px;
+            }
+          }
+        }
+      }
+
+      main{
+        .contForCard{
+          padding: 0 25px 15px;
+        }
+
+        #pay{
+          width: 75%;
+          font-size: 27px;
+        }
+
+        .contOneProd{
+          .oneProd{
+            padding: 30px 8px;
+          }
+        }
+
+        .modal{
+          .details{
+            form{
+              input[id^=user]{
+                font-size: 15px;
+              }
+
+              .userCreditC{
+                input,#dateCard,#cvvCode{
+                  font-size: 15px;
+                }
+                #dateCard{
+                  width: calc((100% - 15px) - 35%);
+                }
+                #cvvCode{
+                  width: 35%;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      footer{
+        .botFoot{
+          .firmInfo{
+            ul{
+              li{
+                .imgF{
+                  width: 40px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  html{
+    body{
+
+      main{
+        .contForCard{
+          padding: 0 5px 15px;
+        }
+
+        .contOneProd{
+          .oneProd{
+            .leftInfo{
+              .imfOne{
+                img{
+                  height: 200px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 330px) {
+  html{
+    body{
+
+      .header{
+        .cartStore{
+          width: 15%;
+        }
+      }
+
+      main{
+        .contOneProd{
+          .oneProd{
+            .leftInfo{
+              .imfOne{
+                img{
+                  height: 175px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 290px) {
+  html{
+    body{
+
+      .header{
+        .logo{
+          h1{
+            font-size: 41px;
+          }
+        }
+      }
+
+    }
+  }
+}

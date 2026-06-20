@@ -11,18 +11,27 @@ export function OneCard({
 }){
   const [openDesc, setOpenDesc] = useState(false);
 
-  if(page === `home`){
+  if(
+    page === `home` || 
+    page === `search`
+  ){
     return (
       <>
         <div className={`card ${openDesc ? 'active' : ''}`}>
           <section>
 
-            <img src={info.image} alt={info.title}/>
+            <img 
+              src={info.image} 
+              alt={info.title}
+              onClick={() => {
+                setPage(`one product`);
+                setCurrProd(info);
+              }}
+            />
 
             <div className="nameProd">
               <h4
-                onClick={({target}) => {
-                  console.log(target);
+                onClick={() => {
                   setPage(`one product`);
                   setCurrProd(info);
                 }}
@@ -70,13 +79,19 @@ export function OneCard({
               <div className="pieces">
                 <span>{infoC.count}</span>
               </div>
-              <img src={infoC.image} alt={infoC.title}/>
+              <img 
+                src={infoC.image} 
+                alt={infoC.title}
+                onClick={() => {
+                  setPage(`one product`);
+                  setCurrProd(infoC);
+                }}
+              />
             </div>
             
             <div className="nameProd">
               <h4
-                onClick={({target}) => {
-                  console.log(target);
+                onClick={() => {
                   setPage(`one product`);
                   setCurrProd(infoC);
                 }}

@@ -16,6 +16,8 @@
   margin-left: auto;
   display: block;
   cursor: pointer;
+  user-select: none;
+  transition: all 80ms ease;
 
   &:hover{
     box-shadow: 1px 1px 2px 3px rgb(221, 251, 255);

@@ -38,59 +38,62 @@ export function App () {
   
   return(
     <>
-    <Header
-      search={search}
-      setSearch={setSearch}
-      cart={cart}
-      setPage={setPage}
-      setViewAllP={setViewAllP}
-    />
+      <Header
+        search={search}
+        setSearch={setSearch}
+        cart={cart}
+        setPage={setPage}
+        setViewAllP={setViewAllP}
+      />
 
-    {
-      page === `home` && (
-        <Home
-          search={search}
-          addToCart={addToCart}
-          page={page}
-          setPage={setPage}
-          viewAllP={viewAllP}
-          setViewAllP={setViewAllP}
-          setCurrProd={setCurrProd}
-        />
-      )
-    }
+      {
+        (
+          page === `home` ||
+          page === `search`
+        )&&(
+          <Home
+            search={search}
+            addToCart={addToCart}
+            page={page}
+            setPage={setPage}
+            viewAllP={viewAllP}
+            setViewAllP={setViewAllP}
+            setCurrProd={setCurrProd}
+          />
+        )
+      }
 
-    {
-      page === `cart` && (
-        <Cart
-          cart={cart}
-          addToCart={addToCart}
-          page={page}
-          setPage={setPage}
-          deleteC={deleteFromCart}
-          setCurrProd={setCurrProd}
-          openPay={openPay}
-          setOpenPay={setOpenPay}
-          closePay={closePay}
-          setClosePay={setClosePay}
-        />
-      )
-    }
+      {
+        page === `cart` && (
+          <Cart
+            cart={cart}
+            addToCart={addToCart}
+            page={page}
+            setPage={setPage}
+            deleteC={deleteFromCart}
+            setCurrProd={setCurrProd}
+            openPay={openPay}
+            setOpenPay={setOpenPay}
+            closePay={closePay}
+            setClosePay={setClosePay}
+          />
+        )
+      }
 
-    {
-      page === `one product` && (
-        <Products
-          currProd={currProd}
-          openPay={openPay}
-          setOpenPay={setOpenPay}
-          closePay={closePay}
-          setClosePay={setClosePay}
-          addToCart={addToCart}
-        />
-      )
-    }
+      {
+        page === `one product` && (
+          <Products
+            currProd={currProd}
+            openPay={openPay}
+            setOpenPay={setOpenPay}
+            closePay={closePay}
+            setClosePay={setClosePay}
+            addToCart={addToCart}
+          />
+        )
+      }
 
-    <Footer/>
+      <Footer/>
     </>
   );
 }

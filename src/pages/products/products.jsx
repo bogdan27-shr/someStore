@@ -29,7 +29,7 @@ export function Products ({
                   setOpenPay(true);
                 }}
               >
-                Buy now for ${currProd.price}
+                Buy now for ${currProd.price.toFixed(2)}
               </button>
             </div>
 

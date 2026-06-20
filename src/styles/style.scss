@@ -1,3 +1,5 @@
+@use './mediaScr.scss';
+
 body{
   margin: 0;
   background-color: black;
@@ -5,4 +7,14 @@ body{
 main {
   margin: 0;
   padding: 0;
+}
+html body *{
+  ::selection {
+    background: #636363;
+    color: aliceblue;
+  }
+  ::-moz-selection {
+    background: #636363;
+    color: aliceblue;
+  }
 }

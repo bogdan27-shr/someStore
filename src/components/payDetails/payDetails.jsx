@@ -2,7 +2,12 @@ import { useEffect, useState } from 'react';
 import './payDetails.scss';
 import closeIcon from '../../img/close.svg';
 
-export function PayDetails ({total, setOpenPay, closePay, setClosePay}){
+export function PayDetails ({
+  total, 
+  setOpenPay, 
+  closePay, 
+  setClosePay
+}){
   const [valRes, setValRes] = useState(false);
   const [errVal, setErrVal] = useState(false);
   const [genErr, setGenErr] = useState(false);

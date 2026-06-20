@@ -27,10 +27,15 @@ export function Header ({
             onChange={(e) => {
               setSearch(e.target.value);
               setViewAllP(`close`);
+              setPage(`search`);
+              if(e.target.value.length <= 0){
+                setPage(`home`);
+              }
             }}
             type="text" 
             id="searchHeader" 
             placeholder='Search products...'
+            autoComplete='off'
           />
         </div>
         <div className="cartStore">

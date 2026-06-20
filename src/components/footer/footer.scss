@@ -1,0 +1,134 @@
+@font-face {
+  font-family: 'rokkittBold';
+  src: url(../../fonts/rokkitt/static/Rokkitt-Bold.ttf);
+}
+@font-face {
+  font-family: 'rokkittExstraBold';
+  src: url(../../fonts/rokkitt/static/Rokkitt-ExtraBold.ttf);
+}
+@font-face {
+  font-family: 'interBold';
+  src: url(../../fonts/inter/static/Inter_18pt-Bold.ttf);
+}
+
+@mixin flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin bgImg{
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+footer{
+  margin-top: 75px;
+
+  .botFoot{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 10px;
+
+    .logoF{
+      @include flex-center;
+      width: calc(100% / 3);
+
+      h3{
+        margin: 0;
+        font-size: 60px;
+        line-height: 45px;
+        display: inline-block;
+        font-family: 'rokkittExstraBold';
+        cursor: default;
+        user-select: none;
+      }
+    }
+
+    .locFirm{
+      width: calc(100% / 3);
+      @include flex-center;
+
+      .someInfo{
+        width: max-content;
+        background-color: rgb(210, 210, 210);
+        border-radius: 10px;
+        padding: 8px;
+
+        ul,li{
+          margin: 0;
+        }
+
+        ul{
+          padding-inline-start: 0px;
+
+          li{
+            list-style: none;
+
+            a{
+              text-decoration: none;
+              color: black;
+              font-size: 17px;
+              font-family: 'interBold';
+
+              span{
+                font-family: 'rokkittBold';
+                font-size: 22px;
+
+                &:hover{
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .firmInfo{
+      width: calc(100% / 3);
+      @include flex-center;
+
+      ul,li{
+        margin: 0;
+      }
+
+      ul{
+        padding-inline-start: 0px;
+
+        li{
+          list-style: none;
+          @include flex-center;
+          justify-content: start;
+
+          .imgF{
+            @include bgImg;
+            background-image: url(../../img/locations.svg);
+            background-size: 48px;
+          }
+          .imgW{
+            @include bgImg;
+            background-image: url(../../img/time.svg);
+            background-size: 30px;
+          }
+
+          a,span.wtm{
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            font-family: 'interBold';
+
+            span{
+              font-family: 'rokkittBold';
+              font-size: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
